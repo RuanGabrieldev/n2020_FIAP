@@ -7,6 +7,7 @@ Trabalho está sendo realizado em grupo, com os integrantes:
 - https://github.com/GustavoNovaes-BR
 - https://github.com/laisfe
 - https://github.com/marcioluiz0391
+- https://github.com/pedromsouza99
 
 ## Andamento do projeto (TELAS)
 
