@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n2020/screens/apresentation_screen.dart';
+import 'package:n2020/screens/instructions_screen.dart';
 
 class ApresentationTab extends StatelessWidget {
   final String image;
@@ -46,17 +47,11 @@ class ApresentationTab extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-
-
-
                 SizedBox(
                   height: 20,
                 ),
-
-
-
-                page != 3 ? 
-                  Text(
+                page != 3
+                    ? Text(
                         description,
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -71,9 +66,12 @@ class ApresentationTab extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * .8,
                         height: 50,
                         child: FlatButton(
-                          shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0)),
                           color: Colors.purple[400],
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/instructions');
+                          },
                           child: Text(
                             "Vamos lá!",
                             style: TextStyle(
@@ -86,15 +84,9 @@ class ApresentationTab extends StatelessWidget {
                           ),
                         ),
                       ),
-
-
-
                 SizedBox(
                   height: 60,
                 ),
-
-
-
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .5,
                   child: Row(
