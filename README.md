@@ -1,16 +1,15 @@
 # n2020
 
-A new Flutter project.
+Projeto em desenvolvimento para avaliação do primeiro semestre do curso de Sistemas de Informação da FIAP, com o objetivo de criar um ChatBot que posasa sanar problemas causados pelo Covid-19 por conta do isolamento social. 
 
-## Getting Started
+Trabalho está sendo realizado em grupo, com os integrantes:
+- https://github.com/RuanGabrieldev
+- https://github.com/GustavoNovaes-BR
+- https://github.com/laisfe
+- https://github.com/marcioluiz0391
+- https://github.com/pedromsouza99
 
-This project is a starting point for a Flutter application.
+## Andamento do projeto (TELAS)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Telas de apresentação do App
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dKwSDQWkMkNlYc9pg4QkoImCmS9CsVo8KL0A07e_JtvpXQ5-2mJqfRsHXTa62EALVzNflPCkdgqe_liWGcymw8aPgCxOYy6ic7BwuMhc4KzPuiW-M5qJoOS9FIIHgUMiEnNHDj8qTE6UL5dtlSzGVb=w1050-h659-no?authuser=0)
