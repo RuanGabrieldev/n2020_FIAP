@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n2020/screens/apresentation_screen.dart';
+import 'package:get/get.dart';
 
 class ApresentationTab extends StatelessWidget {
   final String image;
@@ -73,7 +74,9 @@ class ApresentationTab extends StatelessWidget {
                         child: FlatButton(
                           shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                           color: Colors.purple[400],
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed("/chat");
+                          },
                           child: Text(
                             "Vamos lá!",
                             style: TextStyle(
