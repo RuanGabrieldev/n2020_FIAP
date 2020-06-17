@@ -75,7 +75,7 @@ class ApresentationTab extends StatelessWidget {
                           shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                           color: Colors.purple[400],
                           onPressed: () {
-                            Get.toNamed("/chat");
+                            Get.toNamed("/instructions");
                           },
                           child: Text(
                             "Vamos lá!",

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:n2020/screens/apresentation_screen.dart';
 import 'package:n2020/screens/chat_screen.dart';
+import 'package:n2020/screens/instructions_screen.dart';
+import 'package:n2020/screens/recipes_screen.dart';
 
 void main() {
   runApp(
@@ -14,6 +16,8 @@ void main() {
       namedRoutes: {
         "/" : GetRoute(page: ApresentationScreen()),
         "/chat" : GetRoute(page: ChatScreen()),
+        "/instructions" : GetRoute(page: InstructionsScreen()),
+        "/recipes" : GetRoute(page: RecipesScreen()),
       },
 
   ));
