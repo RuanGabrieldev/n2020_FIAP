@@ -22,13 +22,18 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+  
+  if(listChat!= null){
+    
+
+  }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Botas"),
         centerTitle: true,
       ),
       body: Column(
-        
         children: <Widget>[
           // Expanded(
           //   child: StreamBuilder(
@@ -56,51 +61,55 @@ class _ChatScreenState extends State<ChatScreen> {
           //   )
           // ),
 
-
           Expanded(
               flex: 2,
               child: ListView.builder(
                   itemCount: listChat.length,
-                  
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
-                        mainAxisAlignment: listChat[index]["user"] == 1 ? MainAxisAlignment.end :MainAxisAlignment.start,
-                      
+                        mainAxisAlignment: listChat[index]["user"] == 1
+                            ? MainAxisAlignment.end
+                            : MainAxisAlignment.start,
                         children: <Widget>[
-                          listChat[index]["user"] == 2?Padding(
-                            padding: const EdgeInsets.only(right: 10, left: 10),
-                            child: Image.asset("assets/img/bot1.png", width: 40,),
-                          ):Container() ,
+                          listChat[index]["user"] == 2
+                              ? Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/img/bot1.png",
+                                    width: 40,
+                                  ),
+                                )
+                              : Container(),
                           Flexible(
-                            
                             child: Card(
-                               child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                                child: Text(listChat[index]["msg"] == null ? "": listChat[index]["msg"]),
-                              ) 
-                                
-
-                            ),
+                                child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 8),
+                              child: Text(listChat[index]["msg"] == null
+                                  ? ""
+                                  : listChat[index]["msg"]),
+                            )),
                           ),
-                          listChat[index]["user"] == 1? Padding(
-                            padding: const EdgeInsets.only(right: 10, left: 10),
-                            child: CircleAvatar(child: Text("R", style: TextStyle(color: Colors.white),), backgroundColor: Colors.purple[400],),
-                          ): Container()
+                          listChat[index]["user"] == 1
+                              ? Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: CircleAvatar(
+                                    child: Text(
+                                      "R",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    backgroundColor: Colors.purple[400],
+                                  ),
+                                )
+                              : Container()
                         ],
-                        
                       ),
                     );
-                  }
-              )
-          ),
-
-
-
-
-
-
+                  })),
 
           Container(
             margin: EdgeInsets.all(8),
@@ -147,10 +156,9 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   void dialogFlow(String text) async {
-    print("object");
-    chat.addAll({"msg": text, "user" : 1});
-    listChat.add(Map<String,dynamic>.from(chat));
-  
+    chat.addAll({"msg": text, "user": 1});
+    listChat.add(Map<String, dynamic>.from(chat));
+
     restore();
     AuthGoogle authGoogle = await AuthGoogle(
             fileJson: "assets/botas-project-gofjcb-d47a0ac1cdd5.json")
@@ -158,10 +166,8 @@ class _ChatScreenState extends State<ChatScreen> {
     Dialogflow dialogflow = Dialogflow(
         authGoogle: authGoogle, language: Language.portugueseBrazilian);
     AIResponse response = await dialogflow.detectIntent(text);
-    chat.addAll({"msg": response.getMessage(), "user" : 2});
-     listChat.add(Map<String,dynamic>.from(chat));
-    setState(() {
-      
-    });
+    chat.addAll({"msg": response.getMessage(), "user": 2});
+    listChat.add(Map<String, dynamic>.from(chat));
+    setState(() {});
   }
 }
