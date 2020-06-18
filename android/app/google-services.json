@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "698225895869",
+    "firebase_url": "https://botas-project-gofjcb.firebaseio.com",
+    "project_id": "botas-project-gofjcb",
+    "storage_bucket": "botas-project-gofjcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698225895869:android:2238d04bfc1acd8f768ad4",
+        "android_client_info": {
+          "package_name": "com.example.n2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698225895869-8grrfk0h872uqbfjro1t4h05f79nper0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUQ-fXTw65NBkNkJ-mPWQCrNfH5d-r778"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698225895869-8grrfk0h872uqbfjro1t4h05f79nper0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
