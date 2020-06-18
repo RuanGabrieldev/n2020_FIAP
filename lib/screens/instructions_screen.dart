@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class InstructionsScreen extends StatefulWidget {
   @override
@@ -58,12 +59,47 @@ class _InstructionsScreen extends State<InstructionsScreen> {
           EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0, bottom: 30.0),
       child: Column(
         children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width * .85,
+            height: 80,
+            padding: EdgeInsets.only(bottom: 10),
+            child: InkWell(
+              onTap: () {
+                Get.toNamed("/chat");
+              },
+              child: SizedBox(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(40),
+                    ),
+                    color: Colors.purple[400],
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 20,
+                    horizontal: 2,
+                  ),
+                  child: Text(
+                    "Conversar com Botas",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontFamily: "Josefin",
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
           Text(
             "Se não quiser conversar agora com o Botas, nosso bot, você pode escolher alguma das atividades genéricas sugeridas abaixo.",
             textAlign: TextAlign.left,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 30.0,
+              fontSize: 24.0,
               fontFamily: "Josefin",
             ),
           ),
@@ -197,26 +233,6 @@ class _InstructionsScreen extends State<InstructionsScreen> {
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 20.0),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * .8,
-            height: 50,
-            child: FlatButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(30.0)),
-              color: Colors.purple[400],
-              onPressed: () {},
-              child: Text(
-                "Conversar com Botas",
-                style: TextStyle(
-                  decoration: TextDecoration.none,
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontFamily: "Josefin",
-                  letterSpacing: 2,
-                ),
-              ),
-            ),
           ),
         ],
       ),
