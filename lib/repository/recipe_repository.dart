@@ -7,14 +7,15 @@ class RecipeRepository {
     var db = Database();
     await db.createDatabase();
 
-    List<RecipeModel> cursos = new List<RecipeModel>();
+    List<RecipeModel> recipes = new List<RecipeModel>();
 
     if (db.created) {
-      cursos = new List<RecipeModel>();
-      cursos.add(
+      recipes = new List<RecipeModel>();
+      recipes.add(
         new RecipeModel(
           titulo: 'Lasanha de pão',
-          image: 'https://cdn.guiadacozinha.com.br/wp-content/uploads/2019/10/lasanha-pratica-pao-forma.jpg',
+          image:
+              'https://cdn.guiadacozinha.com.br/wp-content/uploads/2019/10/lasanha-pratica-pao-forma.jpg',
           ingredientes: [
             'Pão fatiado - Quantos couberem na forma',
             'Queijo fatiado- 200g',
@@ -43,6 +44,6 @@ class RecipeRepository {
       );
     }
 
-    return new Future.value(cursos);
+    return new Future.value(recipes);
   }
 }

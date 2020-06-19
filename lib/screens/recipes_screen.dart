@@ -54,7 +54,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
+          borderRadius: BorderRadius.circular(15.0),
         ),
         child: Row(
           children: <Widget>[
