@@ -9,10 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-=======
-    api.getMusic();
->>>>>>> 64a58aeb9966ee76656dd7601ddddb8908c989a3
+    // api.getMusic();
     return Container(
       color: Colors.white,
       child: SafeArea(
@@ -103,20 +100,12 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
-<<<<<<< HEAD
                         GestureDetector(
-                          onTap: () => Get.toNamed("/music"),
+                          onTap: () => Get.toNamed("/games"),
                           child: cards(
                               icon: Icons.casino,
                               title: "Jogos",
                               description: "Divirta-se com a familia"),
-=======
-                        cards(
-                          icon: Icons.casino,
-                          title: "Jogos",
-                          description: "Divirta-se com a familia",
-                          redirect: "/games",
->>>>>>> 64a58aeb9966ee76656dd7601ddddb8908c989a3
                         ),
                         cards(
                             icon: Icons.movie_filter,
