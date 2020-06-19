@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import 'package:n2020/screens/apresentation_screen.dart';
 import 'package:n2020/screens/chat_screen.dart';
 import 'package:n2020/screens/home_screen.dart';
-import 'package:n2020/screens/recipes_details_screen.dart';
 import 'package:n2020/screens/settings_screen.dart';
 import 'package:n2020/screens/recipes_screen.dart';
+import 'package:n2020/screens/recipes_details_screen.dart';
+import 'package:n2020/screens/games_screen.dart';
+import 'package:n2020/screens/games_details_screen.dart';
 
 void main() {
   runApp(GetMaterialApp(
@@ -18,7 +20,9 @@ void main() {
       "/home": GetRoute(page: HomeScreen()),
       "/settings": GetRoute(page: SettingsScreen()),
       "/recipes": GetRoute(page: RecipesScreen()),
-      "/recipes_details": GetRoute(page: RecipesDetalhesScreen())
+      "/recipes_details": GetRoute(page: RecipesDetalhesScreen()),
+      "/games": GetRoute(page: GamesScreen()),
+      "/games_details": GetRoute(page: GamesDetalhesScreen())
     },
   ));
 }

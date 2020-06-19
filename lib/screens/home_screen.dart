@@ -101,9 +101,11 @@ class HomeScreen extends StatelessWidget {
                       crossAxisCount: 2,
                       children: <Widget>[
                         cards(
-                            icon: Icons.casino,
-                            title: "Jogos",
-                            description: "Divirta-se com a familia"),
+                          icon: Icons.casino,
+                          title: "Jogos",
+                          description: "Divirta-se com a familia",
+                          redirect: "/games",
+                        ),
                         cards(
                             icon: Icons.movie_filter,
                             title: "Filmes",
