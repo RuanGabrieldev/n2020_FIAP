@@ -5,15 +5,10 @@ import 'package:n2020/components/floating_btn.dart';
 import 'package:n2020/services/spotify_api.dart';
 
 class HomeScreen extends StatelessWidget {
-
   SpotifyApiBotas api = SpotifyApiBotas();
-
-  
 
   @override
   Widget build(BuildContext context) {
-
-    api.getMusic();
     return Container(
       color: Colors.white,
       child: SafeArea(
@@ -86,15 +81,15 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       )),
-SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
-                   Text("O que fazer hoje?",
+                  Text("O que fazer hoje?",
                       style: TextStyle(
                           color: Colors.black,
                           fontFamily: "Josefin",
                           fontSize: 30)),
-SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                   //List das sugestões
@@ -104,18 +99,24 @@ SizedBox(
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
-                        cards(
-                            icon: Icons.casino,
-                            title: "Jogos",
-                            description: "Divirta-se com a familia"),
+                        GestureDetector(
+                          onTap: () => Get.toNamed("/music"),
+                          child: cards(
+                              icon: Icons.casino,
+                              title: "Jogos",
+                              description: "Divirta-se com a familia"),
+                        ),
                         cards(
                             icon: Icons.movie_filter,
                             title: "Filmes",
                             description: "Veja os melhores"),
-                        cards(
-                            icon: Icons.library_music,
-                            title: "Músicas",
-                            description: "Vamos relaxar?"),
+                        GestureDetector(
+                          onTap: () => Get.toNamed("/music"),
+                          child: cards(
+                              icon: Icons.library_music,
+                              title: "Músicas",
+                              description: "Vamos relaxar?"),
+                        ),
                         cards(
                             icon: Icons.receipt,
                             title: "Receitas",

@@ -24,7 +24,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
   
   if(listChat!= null){
-    
+
 
   }
 
@@ -35,32 +35,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: <Widget>[
-          // Expanded(
-          //   child: StreamBuilder(
-          //     stream: Firestore.instance.collection("usuarios").snapshots(),
-          //     builder: (context, snapshot){
-          //       switch (snapshot.connectionState){
-          //         case ConnectionState.none:
-          //         case ConnectionState.waiting:
-          //           return CircularProgressIndicator();
-          //         default:
-          //           List<DocumentSnapshot> documents = snapshot.data.documents;
-          //           return ListView.builder(
-          //             itemCount: documents.length,
-          //             reverse: true,
-          //             itemBuilder: (context, index){
-          //               return ListTile(
-          //                 title: Text(documents[index].data["msg"]),
-          //               );
-
-          //             }
-          //           );
-          //       }
-
-          //     }
-          //   )
-          // ),
-
+         
           Expanded(
               flex: 2,
               child: ListView.builder(
