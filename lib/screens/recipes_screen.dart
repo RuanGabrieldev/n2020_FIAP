@@ -90,21 +90,38 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.alarm,
-                        size: 20,
-                        color: Colors.blueGrey,
-                      ),
-                      Expanded(
-                        child: Text(recipe.tempoPreparo),
-                      ),
-                      Icon(Icons.local_dining),
-                      Expanded(
-                        child: Text(recipe.rendimento),
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 15, left: 8),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.alarm,
+                          size: 20,
+                          color: Colors.blueGrey,
+                        ),
+                        Expanded(
+                          child: Text(
+                            recipe.tempoPreparo,
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          Icons.local_dining,
+                          size: 20,
+                          color: Colors.blueGrey,
+                        ),
+                        Expanded(
+                          child: Text(
+                            recipe.rendimento,
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
