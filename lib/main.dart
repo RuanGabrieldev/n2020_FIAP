@@ -9,6 +9,8 @@ import 'package:n2020/screens/recipes_screen.dart';
 import 'package:n2020/screens/recipes_details_screen.dart';
 import 'package:n2020/screens/games_screen.dart';
 import 'package:n2020/screens/games_details_screen.dart';
+import 'package:n2020/screens/movies_screen.dart';
+import 'package:n2020/screens/movies_details_screen.dart';
 
 void main() {
   runApp(GetMaterialApp(
@@ -24,7 +26,9 @@ void main() {
       "/recipes": GetRoute(page: RecipesScreen()),
       "/recipes_details": GetRoute(page: RecipesDetalhesScreen()),
       "/games": GetRoute(page: GamesScreen()),
-      "/games_details": GetRoute(page: GamesDetalhesScreen())
+      "/games_details": GetRoute(page: GamesDetalhesScreen()),
+      "/movies": GetRoute(page: MoviesScreen()),
+      "/movies_details": GetRoute(page: MoviesDetalhesScreen())
     },
   ));
 }

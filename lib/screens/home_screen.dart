@@ -100,23 +100,23 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
-                        GestureDetector(
-                          onTap: () => Get.toNamed("/games"),
-                          child: cards(
-                              icon: Icons.casino,
-                              title: "Jogos",
-                              description: "Divirta-se com a familia"),
+                        cards(
+                          icon: Icons.casino,
+                          title: "Jogos",
+                          description: "Divirta-se com a familia",
+                          redirect: "/games",
                         ),
                         cards(
-                            icon: Icons.movie_filter,
-                            title: "Filmes",
-                            description: "Veja os melhores"),
-                        GestureDetector(
-                          onTap: () => Get.toNamed("/music"),
-                          child: cards(
-                              icon: Icons.library_music,
-                              title: "Músicas",
-                              description: "Vamos relaxar?"),
+                          icon: Icons.movie_filter,
+                          title: "Filmes",
+                          description: "Veja os melhores",
+                          redirect: "/movies",
+                        ),
+                        cards(
+                          icon: Icons.library_music,
+                          title: "Músicas",
+                          description: "Vamos relaxar?",
+                          redirect: "/music",
                         ),
                         cards(
                           icon: Icons.receipt,
