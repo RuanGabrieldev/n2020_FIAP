@@ -140,7 +140,6 @@ class HomeScreen extends StatelessWidget {
   }) {
     return InkWell(
       onTap: () {
-        print(redirect);
         if (redirect != null) {
           Get.toNamed(redirect.toString());
         }
