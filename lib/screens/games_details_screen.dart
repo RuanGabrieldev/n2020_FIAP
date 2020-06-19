@@ -78,7 +78,7 @@ class GamesDetalhesScreen extends StatelessWidget {
                           Icon(
                             Icons.people,
                             size: 30,
-                            color: Colors.blue,
+                            color: Colors.lightBlueAccent,
                           ),
                           Expanded(
                             child: Text(
@@ -96,7 +96,7 @@ class GamesDetalhesScreen extends StatelessWidget {
                           Icon(
                             Icons.alarm,
                             size: 30,
-                            color: Colors.deepOrange,
+                            color: Colors.blue,
                           ),
                           Expanded(
                             child: Text(
