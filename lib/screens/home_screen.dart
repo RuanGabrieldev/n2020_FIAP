@@ -5,14 +5,10 @@ import 'package:n2020/components/floating_btn.dart';
 import 'package:n2020/services/spotify_api.dart';
 
 class HomeScreen extends StatelessWidget {
-
   SpotifyApiBotas api = SpotifyApiBotas();
-
-  
 
   @override
   Widget build(BuildContext context) {
-
     api.getMusic();
     return Container(
       color: Colors.white,
@@ -86,15 +82,15 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       )),
-SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
-                   Text("O que fazer hoje?",
+                  Text("O que fazer hoje?",
                       style: TextStyle(
                           color: Colors.black,
                           fontFamily: "Josefin",
                           fontSize: 30)),
-SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                   //List das sugestões
@@ -117,9 +113,11 @@ SizedBox(
                             title: "Músicas",
                             description: "Vamos relaxar?"),
                         cards(
-                            icon: Icons.receipt,
-                            title: "Receitas",
-                            description: "Cozinhar sempre é bom!"),
+                          icon: Icons.receipt,
+                          title: "Receitas",
+                          description: "Cozinhar sempre é bom!",
+                          redirect: "/recipes",
+                        ),
                       ],
                     ),
                   ),
@@ -134,44 +132,54 @@ SizedBox(
     );
   }
 
-  Card cards(
-      {@required IconData icon,
-      @required String title,
-      @required String description}) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        child: Stack(
-          children: <Widget>[
-            Icon(
-              icon,
-              color: Colors.purple,
-              size: 50,
-            ),
-            Positioned(
-              bottom: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    title,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "Josefin",
-                        fontSize: 30),
-                  ),
-                  Text(description,
-                      style: TextStyle(
-                          color: Colors.black38,
-                          fontFamily: "Josefin",
-                          fontSize: 12)),
-                ],
+  InkWell cards({
+    @required IconData icon,
+    @required String title,
+    @required String description,
+    String redirect,
+  }) {
+    return InkWell(
+      onTap: () {
+        print(redirect);
+        if (redirect != null) {
+          Get.toNamed(redirect.toString());
+        }
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          child: Stack(
+            children: <Widget>[
+              Icon(
+                icon,
+                color: Colors.purple,
+                size: 50,
               ),
-            ),
-          ],
+              Positioned(
+                bottom: 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "Josefin",
+                          fontSize: 30),
+                    ),
+                    Text(description,
+                        style: TextStyle(
+                            color: Colors.black38,
+                            fontFamily: "Josefin",
+                            fontSize: 12)),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
