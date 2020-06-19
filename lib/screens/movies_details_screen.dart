@@ -25,7 +25,7 @@ class MoviesDetalhesScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            expandedHeight: 200.0,
+            expandedHeight: 300.0,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
