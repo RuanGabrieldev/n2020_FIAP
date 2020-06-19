@@ -61,11 +61,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
             Container(
               padding: const EdgeInsets.all(8.0),
               alignment: Alignment.topLeft,
-              child: Image.asset(
-                "assets/img/bot1.png",
+              // child: Image.asset(
+              //   "assets/img/bot1.png",
+              //   width: 100,
+              // ),
+              child: Image.network(
+                recipe.image,
                 width: 100,
               ),
-              // child: Image.network(recipe.image),
             ),
             Expanded(
               child: Column(

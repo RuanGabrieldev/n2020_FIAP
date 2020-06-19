@@ -14,7 +14,7 @@ class RecipeRepository {
       cursos.add(
         new RecipeModel(
           titulo: 'Lasanha de pão',
-          image: 'https://developer.spotify.com/assets/WebAPI_intro.png',
+          image: 'https://cdn.guiadacozinha.com.br/wp-content/uploads/2019/10/lasanha-pratica-pao-forma.jpg',
           ingredientes: [
             'Pão fatiado - Quantos couberem na forma',
             'Queijo fatiado- 200g',
