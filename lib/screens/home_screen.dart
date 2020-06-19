@@ -9,6 +9,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    api.getMusic();
+>>>>>>> 64a58aeb9966ee76656dd7601ddddb8908c989a3
     return Container(
       color: Colors.white,
       child: SafeArea(
@@ -99,12 +103,20 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
+<<<<<<< HEAD
                         GestureDetector(
                           onTap: () => Get.toNamed("/music"),
                           child: cards(
                               icon: Icons.casino,
                               title: "Jogos",
                               description: "Divirta-se com a familia"),
+=======
+                        cards(
+                          icon: Icons.casino,
+                          title: "Jogos",
+                          description: "Divirta-se com a familia",
+                          redirect: "/games",
+>>>>>>> 64a58aeb9966ee76656dd7601ddddb8908c989a3
                         ),
                         cards(
                             icon: Icons.movie_filter,
@@ -118,9 +130,11 @@ class HomeScreen extends StatelessWidget {
                               description: "Vamos relaxar?"),
                         ),
                         cards(
-                            icon: Icons.receipt,
-                            title: "Receitas",
-                            description: "Cozinhar sempre é bom!"),
+                          icon: Icons.receipt,
+                          title: "Receitas",
+                          description: "Cozinhar sempre é bom!",
+                          redirect: "/recipes",
+                        ),
                       ],
                     ),
                   ),
@@ -135,44 +149,53 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Card cards(
-      {@required IconData icon,
-      @required String title,
-      @required String description}) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        child: Stack(
-          children: <Widget>[
-            Icon(
-              icon,
-              color: Colors.purple,
-              size: 50,
-            ),
-            Positioned(
-              bottom: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    title,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "Josefin",
-                        fontSize: 30),
-                  ),
-                  Text(description,
-                      style: TextStyle(
-                          color: Colors.black38,
-                          fontFamily: "Josefin",
-                          fontSize: 12)),
-                ],
+  InkWell cards({
+    @required IconData icon,
+    @required String title,
+    @required String description,
+    String redirect,
+  }) {
+    return InkWell(
+      onTap: () {
+        if (redirect != null) {
+          Get.toNamed(redirect.toString());
+        }
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          child: Stack(
+            children: <Widget>[
+              Icon(
+                icon,
+                color: Colors.purple,
+                size: 50,
               ),
-            ),
-          ],
+              Positioned(
+                bottom: 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "Josefin",
+                          fontSize: 30),
+                    ),
+                    Text(description,
+                        style: TextStyle(
+                            color: Colors.black38,
+                            fontFamily: "Josefin",
+                            fontSize: 12)),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
