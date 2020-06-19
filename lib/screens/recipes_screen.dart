@@ -12,14 +12,17 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(64, 75, 96, .9),
-        title: Text("Recipes"),
+        backgroundColor: Colors.purple,
+        title: Text("Receitas"),
       ),
       body: FutureBuilder<List<RecipeModel>>(
         future: RecipeRepository().findAllAsync(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return buildListView(snapshot.data);
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+              child: buildListView(snapshot.data),
+            );
           } else {
             return Center(
               child: CircularProgressIndicator(),
@@ -39,39 +42,70 @@ class _RecipesScreenState extends State<RecipesScreen> {
     );
   }
 
-  Card cardRecipe(RecipeModel recipe) {
-    return Card(
-      color: Colors.white,
-      child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(
-            context,
-            "recipes_details",
-            arguments: recipe,
-          );
-        },
+  InkWell cardRecipe(RecipeModel recipe) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          "recipes_details",
+          arguments: recipe,
+        );
+      },
+      child: Card(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
         child: Row(
           children: <Widget>[
-            new Container(
+            Container(
               padding: const EdgeInsets.all(8.0),
               alignment: Alignment.topLeft,
               child: Image.asset(
                 "assets/img/bot1.png",
-                width: 120,
+                width: 100,
               ),
               // child: Image.network(recipe.image),
             ),
-            new Expanded(
-                child: new Container(
-              padding: const EdgeInsets.all(10.0),
-              alignment: Alignment.topLeft,
-              child: Text(
-                recipe.titulo,
-                style: null,
-                textAlign: TextAlign.left,
-                maxLines: 5,
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        padding: const EdgeInsets.all(10.0),
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          recipe.titulo,
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                          maxLines: 5,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.alarm,
+                        size: 20,
+                        color: Colors.blueGrey,
+                      ),
+                      Expanded(
+                        child: Text(recipe.tempoPreparo),
+                      ),
+                      Icon(Icons.local_dining),
+                      Expanded(
+                        child: Text(recipe.rendimento),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            )),
+            ),
           ],
           crossAxisAlignment: CrossAxisAlignment.start,
         ),

@@ -14,7 +14,7 @@ class RecipeRepository {
       cursos.add(
         new RecipeModel(
           titulo: 'Lasanha de pão',
-          image: 'https://github.com/jonataslaw/get/raw/master/get.png',
+          image: 'https://developer.spotify.com/assets/WebAPI_intro.png',
           ingredientes: [
             'Pão fatiado - Quantos couberem na forma',
             'Queijo fatiado- 200g',
