@@ -112,6 +112,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisCount: 2,
                       children: <Widget>[
                         cards(
+<<<<<<< HEAD
                             icon: Icons.casino,
                             title: "Jogos",
                             description: "Divirta-se com a familia",
@@ -130,6 +131,25 @@ class HomeScreen extends StatelessWidget {
                             redirect: "/music"
                             ),
                             
+=======
+                          icon: Icons.casino,
+                          title: "Jogos",
+                          description: "Divirta-se com a familia",
+                          redirect: "/games",
+                        ),
+                        cards(
+                          icon: Icons.movie_filter,
+                          title: "Filmes",
+                          description: "Veja os melhores",
+                          redirect: "/movies",
+                        ),
+                        cards(
+                          icon: Icons.library_music,
+                          title: "Músicas",
+                          description: "Vamos relaxar?",
+                          redirect: "/music",
+                        ),
+>>>>>>> a177a9a1c1647b7fc0657f28f4e5a6987913da92
                         cards(
                           icon: Icons.receipt,
                           title: "Receitas",

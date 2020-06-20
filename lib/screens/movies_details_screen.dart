@@ -1,41 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:n2020/models/game_model.dart';
+import 'package:n2020/models/movie_model.dart';
 
-class GamesDetalhesScreen extends StatelessWidget {
+class MoviesDetalhesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final GameModel gameModel = ModalRoute.of(context).settings.arguments;
-
-    Column stepList(List<GameStep> list) {
-      return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: list
-              .map(
-                (step) => step.imageUrl == null
-                    ? Text(
-                        step.text,
-                        style: TextStyle(color: Colors.black54, fontSize: 16),
-                        textAlign: TextAlign.left,
-                      )
-                    : Column(
-                        children: [
-                          Image.network(
-                            step.imageUrl,
-                            height: 200,
-                            alignment: Alignment.center,
-                          ),
-                          Text(
-                            step.text,
-                            style:
-                                TextStyle(color: Colors.black54, fontSize: 16),
-                            textAlign: TextAlign.left,
-                          )
-                        ],
-                      ),
-              )
-              .toList());
-    }
+    final MovieModel movieModel = ModalRoute.of(context).settings.arguments;
 
     Padding listTitle(String title) {
       return Padding(
@@ -55,13 +25,13 @@ class GamesDetalhesScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            expandedHeight: 200.0,
+            expandedHeight: 300.0,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-              title: Text(gameModel.titulo),
+              title: Text(movieModel.titulo),
               background: Image.network(
-                gameModel.image,
+                movieModel.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -69,20 +39,21 @@ class GamesDetalhesScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               <Widget>[
+                listTitle(movieModel.genero),
                 Padding(
-                  padding: EdgeInsets.only(top: 10, left: 20, right: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
                       Row(
                         children: [
                           Icon(
-                            Icons.people,
+                            Icons.alarm,
                             size: 30,
-                            color: Colors.lightBlueAccent,
+                            color: Colors.blue,
                           ),
                           Expanded(
                             child: Text(
-                              " Jogadores: " + gameModel.pessoas,
+                              " Duração: " + movieModel.duracao,
                               style: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 18,
@@ -94,13 +65,13 @@ class GamesDetalhesScreen extends StatelessWidget {
                       Row(
                         children: [
                           Icon(
-                            Icons.alarm,
+                            Icons.star,
                             size: 30,
-                            color: Colors.blue,
+                            color: Colors.yellow,
                           ),
                           Expanded(
                             child: Text(
-                              " Duração: " + gameModel.duracao,
+                              " Avaliaçao: " + movieModel.avaliacao,
                               style: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 18,
@@ -112,15 +83,26 @@ class GamesDetalhesScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                listTitle("Regras"),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(gameModel.regras),
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 15),
+                  child: Text(
+                    movieModel.sinopse,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
                 ),
-                listTitle("Como Jogar"),
+                listTitle("Detalhes"),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: stepList(gameModel.steps),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Gênero: " + movieModel.genero),
+                      Text("Estrelas: " + movieModel.atores),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
