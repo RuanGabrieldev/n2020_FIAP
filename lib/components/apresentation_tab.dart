@@ -16,6 +16,8 @@ class ApresentationTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Container(
       color: Colors.white,
       height: MediaQuery.of(context).size.height,
@@ -56,6 +58,8 @@ class ApresentationTab extends StatelessWidget {
 
 
 
+
+
                 page != 3 ? 
                   Text(
                         description,
@@ -68,7 +72,11 @@ class ApresentationTab extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       )
-                    : Container(
+                    :
+                    
+                    
+                    
+                     Container(
                         width: MediaQuery.of(context).size.width * .8,
                         height: 50,
                         child: FlatButton(
@@ -97,7 +105,7 @@ class ApresentationTab extends StatelessWidget {
                 ),
 
 
-
+             
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .5,
                   child: Row(
@@ -105,7 +113,7 @@ class ApresentationTab extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.album,
-                        size: 15,
+                        size: 15, 
                         color: page == 1 ? Colors.purple[400] : Colors.grey,
                       ),
                       Icon(Icons.album,
@@ -117,6 +125,8 @@ class ApresentationTab extends StatelessWidget {
                     ],
                   ),
                 )
+
+               
               ],
             ),
           )

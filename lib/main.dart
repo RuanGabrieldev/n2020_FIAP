@@ -4,11 +4,13 @@ import 'package:n2020/screens/apresentation_screen.dart';
 import 'package:n2020/screens/chat_screen.dart';
 import 'package:n2020/screens/home_screen.dart';
 import 'package:n2020/screens/music_screen.dart';
+import 'package:n2020/screens/security_screen.dart';
 import 'package:n2020/screens/settings_screen.dart';
 import 'package:n2020/screens/recipes_screen.dart';
 import 'package:n2020/screens/recipes_details_screen.dart';
 import 'package:n2020/screens/games_screen.dart';
 import 'package:n2020/screens/games_details_screen.dart';
+import 'package:n2020/screens/terms_screen.dart';
 
 void main() {
   runApp(GetMaterialApp(
@@ -20,11 +22,14 @@ void main() {
       "/chat": GetRoute(page: ChatScreen()),
       "/home": GetRoute(page: HomeScreen()),
       "/settings": GetRoute(page: SettingsScreen()),
-      "/music": GetRoute(page: MusicScreen()),
       "/recipes": GetRoute(page: RecipesScreen()),
       "/recipes_details": GetRoute(page: RecipesDetalhesScreen()),
       "/games": GetRoute(page: GamesScreen()),
-      "/games_details": GetRoute(page: GamesDetalhesScreen())
+      "/games_details": GetRoute(page: GamesDetalhesScreen()),
+      "/music" : GetRoute(page: MusicScreen()),
+      "/security" :  GetRoute(page: SecurityScreen()),
+      "/terms" :  GetRoute(page: TermsScreen()),
+      "/movies" :  GetRoute(page: TermsScreen()),
     },
   ));
 }

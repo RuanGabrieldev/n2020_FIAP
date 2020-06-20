@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:n2020/components/bottom_navigation.dart';
 import 'package:n2020/components/floating_btn.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  bool checked = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -80,18 +88,28 @@ class SettingsScreen extends StatelessWidget {
                       SwitchListTile(
                         secondary: Icon(Icons.notifications_active),
                         title: Text("Notificações"),
-                        value: false, 
-                        onChanged: (_){},   
+                        value: checked, 
+                        onChanged: (value){
+                           checked ? checked = false : checked = true;
+                          setState(() {          
+                          });
+                        },   
                       ),
 
-                      ListTile(
-                        leading: Icon(Icons.security),
-                        title: Text("Segurança"),
+                      GestureDetector(
+                        onTap: () => Get.toNamed("/security"),
+                        child: ListTile(
+                          leading: Icon(Icons.security),
+                          title: Text("Segurança"),
+                        ),
                       ),
 
-                      ListTile(
-                        leading: Icon(Icons.sort),
-                        title: Text("Termos de uso"),
+                      GestureDetector(
+                        onTap: () => Get.toNamed("/terms"),
+                        child: ListTile(
+                          leading: Icon(Icons.sort),
+                          title: Text("Termos de uso"),
+                        ),
                       )
                     ],
                   ),

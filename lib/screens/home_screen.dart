@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:n2020/components/bottom_navigation.dart';
@@ -5,8 +8,7 @@ import 'package:n2020/components/floating_btn.dart';
 import 'package:n2020/services/spotify_api.dart';
 
 class HomeScreen extends StatelessWidget {
-  SpotifyApiBotas api = SpotifyApiBotas();
-
+  
   @override
   Widget build(BuildContext context) {
     // api.getMusic();
@@ -72,12 +74,21 @@ class HomeScreen extends StatelessWidget {
                                   fontSize: 20),
                             ),
                             Divider(),
-                            Text(
-                              "Não importa o que você decidiu. O que importa é que isso te faça feliz.",
-                              style: TextStyle(
-                                  color: Colors.black45,
-                                  fontFamily: "Josefin",
-                                  fontSize: 15),
+                            FutureBuilder(
+                              future: Firestore.instance.collection("frases").getDocuments(),
+                              builder: (context, snapshot) {
+                                if(!snapshot.hasData){
+                                  return CircularProgressIndicator();
+                                }else{
+                                  return Text(
+                                  snapshot.data.documents[0]["texto"],
+                                  style: TextStyle(
+                                      color: Colors.black45,
+                                      fontFamily: "Josefin",
+                                      fontSize: 15),
+                                );
+                                }
+                              }
                             ),
                           ],
                         ),
@@ -100,24 +111,25 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
-                        GestureDetector(
-                          onTap: () => Get.toNamed("/games"),
-                          child: cards(
-                              icon: Icons.casino,
-                              title: "Jogos",
-                              description: "Divirta-se com a familia"),
-                        ),
+                        cards(
+                            icon: Icons.casino,
+                            title: "Jogos",
+                            description: "Divirta-se com a familia",
+                            redirect: "/games"
+                            ),
                         cards(
                             icon: Icons.movie_filter,
                             title: "Filmes",
-                            description: "Veja os melhores"),
-                        GestureDetector(
-                          onTap: () => Get.toNamed("/music"),
-                          child: cards(
-                              icon: Icons.library_music,
-                              title: "Músicas",
-                              description: "Vamos relaxar?"),
-                        ),
+                            description: "Veja os melhores",
+                            redirect: "/movie"
+                            ),
+                        cards(
+                            icon: Icons.library_music,
+                            title: "Músicas",
+                            description: "Vamos relaxar?",
+                            redirect: "/music"
+                            ),
+                            
                         cards(
                           icon: Icons.receipt,
                           title: "Receitas",
@@ -189,4 +201,8 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+
+
+
 }
