@@ -9,13 +9,18 @@ Trabalho está sendo realizado em grupo, com os integrantes:
 - https://github.com/marcioluiz0391
 - https://github.com/pedromsouza99
 
+Link no youtube para visualização do funcionamento do App:
+https://youtu.be/xpx1mKu4c3Y
+
+
 ## Andamento do projeto (TELAS)
 
 - Telas de apresentação do App
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dKwSDQWkMkNlYc9pg4QkoImCmS9CsVo8KL0A07e_JtvpXQ5-2mJqfRsHXTa62EALVzNflPCkdgqe_liWGcymw8aPgCxOYy6ic7BwuMhc4KzPuiW-M5qJoOS9FIIHgUMiEnNHDj8qTE6UL5dtlSzGVb=w1050-h659-no?authuser=0)
 
 - Tela Inicial
- ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dSKadD7h1UxXfOOS2Unz6wisS-mL2kTuoLipkfXhGGJqy9ft05ewDFFHO0SAqrAJO2p120tK4Fy3jvz0wProh7aRE7V1QwSCceTVEaDqxGYbJH9x2V4geVIW7kHsRdxVeqLOUjgVGor3VfzGLHBzUm=w420-h979-no?authuser=0)
+
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dSKadD7h1UxXfOOS2Unz6wisS-mL2kTuoLipkfXhGGJqy9ft05ewDFFHO0SAqrAJO2p120tK4Fy3jvz0wProh7aRE7V1QwSCceTVEaDqxGYbJH9x2V4geVIW7kHsRdxVeqLOUjgVGor3VfzGLHBzUm=w420-h979-no?authuser=0)
  
 - Tela de Configuração
  
